@@ -1,0 +1,282 @@
+# Academic Research Skills for Claude Code
+
+一套完整的學術研究 Claude Code 技能包，涵蓋從研究到論文出版的全流程。
+
+A comprehensive suite of Claude Code skills for academic research, covering the full pipeline from research to publication.
+
+---
+
+## Features
+
+- **Deep Research** — 10-agent research team with Socratic guided mode
+- **Academic Paper** — 10-agent paper writing with chapter-by-chapter planning
+- **Academic Paper Reviewer** — Multi-perspective peer review (Editor-in-Chief + 3 dynamic reviewers)
+- **Academic Pipeline** — Full pipeline orchestrator coordinating all skills
+
+### Full Pipeline
+
+```
+Research (socratic/full) → Write (plan/full) → Review (full/guided) → Revise → Finalize
+```
+
+---
+
+## Prerequisites
+
+### Install Node.js
+
+Claude Code requires Node.js 18+.
+
+```bash
+# macOS (using Homebrew)
+brew install node
+
+# Windows (using winget)
+winget install OpenJS.NodeJS.LTS
+
+# Linux (using nvm)
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+nvm install --lts
+```
+
+### Install Claude Code
+
+```bash
+npm install -g @anthropic-ai/claude-code
+```
+
+### Set Up API Key
+
+You need an Anthropic API key. Get one at https://console.anthropic.com/
+
+```bash
+# Claude Code will prompt for your API key on first run
+claude
+```
+
+Or set it as an environment variable:
+
+```bash
+export ANTHROPIC_API_KEY=sk-ant-xxxxx
+```
+
+---
+
+## Installation
+
+### Method 1: As Project Skills (Recommended)
+
+Clone this repo into your project's `.claude/skills/` directory:
+
+```bash
+# Navigate to your project root
+cd /path/to/your/project
+
+# Create skills directory if it doesn't exist
+mkdir -p .claude/skills
+
+# Clone the skills
+git clone https://github.com/YOUR_USERNAME/academic-research-skills.git .claude/skills/academic-research-skills
+```
+
+Then copy the `.claude/CLAUDE.md` content into your project's `.claude/CLAUDE.md` (merge with existing if you have one).
+
+### Method 2: As a Standalone Project
+
+```bash
+# Clone the repo
+git clone https://github.com/YOUR_USERNAME/academic-research-skills.git
+
+# Navigate to the project
+cd academic-research-skills
+
+# Start Claude Code
+claude
+```
+
+### Method 3: Upload to claude.ai
+
+1. Download each skill's `SKILL.md` file
+2. Go to claude.ai → Project → Project Knowledge
+3. Upload the SKILL.md files
+
+> **Note**: claude.ai upload only supports individual files. The full multi-agent experience works best with Claude Code.
+
+---
+
+## Usage
+
+### Quick Start
+
+```
+# Start a full research pipeline
+You: "我想做一篇關於 AI 對高教品保影響的研究論文"
+
+# Start with Socratic guidance
+You: "引導我研究 AI 在教育評鑑中的應用"
+
+# Write a paper with guided planning
+You: "引導我寫一篇關於少子化影響的論文"
+
+# Review an existing paper
+You: "幫我審查這篇論文" (then provide the paper)
+
+# Check pipeline status
+You: "進度" or "status"
+```
+
+### Individual Skills
+
+#### Deep Research
+```
+"Research the impact of AI on higher education" → full mode
+"引導我研究 X" → socratic mode (guided)
+"幫我查核這些說法" → fact-check mode
+"幫我做文獻回顧" → lit-review mode
+```
+
+#### Academic Paper
+```
+"幫我寫一篇論文" → full mode
+"引導我寫論文" → plan mode (guided)
+"幫我轉換格式成 LaTeX" → format-convert mode
+"檢查引用格式" → citation-check mode
+```
+
+#### Academic Paper Reviewer
+```
+"審查這篇論文" → full mode
+"引導我改進這篇論文" → guided mode
+"檢查研究方法" → methodology-focus mode
+```
+
+#### Academic Pipeline (Orchestrator)
+```
+"我想做一篇完整的研究論文" → full pipeline from Stage 1
+"我已經有論文，幫我審查" → mid-entry at Stage 3
+"我收到審稿意見了" → mid-entry at Stage 4
+```
+
+### Supported Languages
+
+- **Traditional Chinese** (繁體中文) — default when user writes in Chinese
+- **English** — default when user writes in English
+- Bilingual abstracts (中文 + English) for academic papers
+
+### Supported Citation Formats
+
+- APA 7.0 (default, including Chinese citation rules)
+- Chicago (Notes & Author-Date)
+- MLA
+- IEEE
+- Vancouver
+
+### Supported Paper Structures
+
+- IMRaD (empirical research)
+- Thematic Literature Review
+- Theoretical Analysis
+- Case Study
+- Policy Brief
+- Conference Paper
+
+---
+
+## Skill Details
+
+### Deep Research (v2.0)
+
+10-agent pipeline for rigorous academic research:
+
+| Agent | Role |
+|-------|------|
+| Research Question Agent | FINER-scored RQ formulation |
+| Research Architect | Methodology design |
+| Bibliography Agent | Systematic literature search |
+| Source Verification Agent | Evidence grading, predatory journal detection |
+| Synthesis Agent | Cross-source integration |
+| Report Compiler | APA 7.0 report drafting |
+| Editor-in-Chief | Q1 journal editorial review |
+| Devil's Advocate | Assumption challenging (3 checkpoints) |
+| Ethics Review Agent | AI disclosure, attribution integrity |
+| **Socratic Mentor** | **Guided research dialogue (new in v2.0)** |
+
+### Academic Paper (v2.0)
+
+10-agent pipeline for academic paper writing:
+
+| Agent | Role |
+|-------|------|
+| Intake Agent | Configuration interview + handoff detection |
+| Literature Strategist | Search strategy + annotated bibliography |
+| Structure Architect | Paper outline + word allocation |
+| Argument Builder | Thesis + claim-evidence chains |
+| Draft Writer | Section-by-section writing |
+| Citation Compliance | Multi-format citation audit |
+| Abstract Bilingual | EN + 中文 abstracts |
+| Peer Reviewer | 5-dimension review (max 2 rounds) |
+| Formatter | LaTeX/DOCX/PDF output |
+| **Socratic Mentor** | **Chapter-by-chapter guided planning (new in v2.0)** |
+
+### Academic Paper Reviewer (v1.0)
+
+6-agent multi-perspective review:
+
+| Agent | Role |
+|-------|------|
+| Field Analyst | Identifies domain, configures reviewer personas |
+| Editor-in-Chief | Journal fit, novelty, significance |
+| Methodology Reviewer | Research design, statistics, reproducibility |
+| Domain Reviewer | Literature coverage, theoretical framework |
+| Perspective Reviewer | Cross-disciplinary, practical impact |
+| Editorial Synthesizer | Consensus analysis, revision roadmap |
+
+### Academic Pipeline (v1.0)
+
+Lightweight orchestrator coordinating the full pipeline:
+
+| Stage | Skill | Purpose |
+|-------|-------|---------|
+| 1. RESEARCH | deep-research | Clarify RQ, find literature |
+| 2. WRITE | academic-paper | Draft the paper |
+| 3. REVIEW | academic-paper-reviewer | Multi-perspective review |
+| 4. REVISE | academic-paper | Address review comments |
+| 5. FINALIZE | academic-paper | Format conversion |
+
+---
+
+## License
+
+This work is licensed under [CC-BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/).
+
+**You are free to:**
+- Share — copy and redistribute the material
+- Adapt — remix, transform, and build upon the material
+
+**Under the following terms:**
+- **Attribution** — You must give appropriate credit
+- **NonCommercial** — You may not use the material for commercial purposes
+
+**Attribution format:**
+```
+Based on Academic Research Skills by Cheng-I Wu (HEEACT)
+https://github.com/YOUR_USERNAME/academic-research-skills
+```
+
+---
+
+## Author
+
+**Cheng-I Wu** (吳政宜)
+HEEACT — Higher Education Evaluation and Accreditation Council of Taiwan
+
+---
+
+## Changelog
+
+### v1.0 (2026-02)
+- Initial release
+- deep-research v2.0 (10 agents, 6 modes including socratic)
+- academic-paper v2.0 (10 agents, 8 modes including plan)
+- academic-paper-reviewer v1.0 (6 agents, 4 modes including guided)
+- academic-pipeline v1.0 (orchestrator)
