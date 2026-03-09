@@ -436,7 +436,7 @@ https://github.com/Imbad0202/academic-research-skills
 - **deep-research**: Socratic mode now uses **intent-based activation** instead of keyword matching. Works in any language — detects meaning (e.g., "user wants guided thinking") rather than matching specific strings.
 - **academic-paper**: Plan mode now uses **intent-based activation**. Detects intent signals like "user is uncertain how to start" or "user wants step-by-step guidance" in any language.
 - Both modes now have a **default rule**: when intent is ambiguous, prefer `socratic`/`plan` over `full` — safer to guide first.
-- General trigger keywords remain bilingual (EN + zh-TW) for skill-level matching confidence.
+- Two-layer architecture: Layer 1 (skill activation) uses bilingual keywords for matching confidence; Layer 2 (mode routing) uses language-agnostic intent signals.
 
 ### v2.6.1 (2026-03-09) — Bilingual Trigger Keywords
 - **deep-research**: Added Traditional Chinese trigger keywords for general activation and Socratic mode.

@@ -14,20 +14,21 @@ Cross-skill fixes and update history.
 - `### Socratic Mode Trigger Keywords` → `### Socratic Mode Activation`
 - Replaced keyword-matching logic with intent-based activation: 5 intent signals that work in any language
 - Added default rule: ambiguous intent → prefer `socratic` over `full`
-- Keywords retained as illustrative examples (EN + 繁中), not as matching rules
+- Example triggers condensed to single line with "or equivalent in any language"
 
 **academic-paper/SKILL.md**:
 - `### Plan Mode Trigger Keywords` → `### Plan Mode Activation`
 - Replaced keyword-matching logic with intent-based activation: 6 intent signals
 - Added default rule: ambiguous intent → prefer `plan` over `full`
-- Keywords retained as illustrative examples
+- Example triggers condensed to single line with "or equivalent in any language"
 
 **README.md / README.zh-TW.md**:
-- Updated Supported Languages section: removed "replace keywords" advice, replaced with explanation that mode activation is now intent-based and language-agnostic
+- Updated Supported Languages section: mode activation is intent-based and language-agnostic; general Trigger Keywords (Layer 1) still benefit from bilingual entries for skill-level matching confidence
 - Added v2.6.2 changelog entry
-- Clarified that general Trigger Keywords (Layer 1) still benefit from bilingual entries
 
-**Motivation**: Intent-based activation is fundamentally more robust than keyword lists — it handles any language without enumeration, and correctly routes users who express the same need in different words.
+**Design rationale — two-layer trigger architecture**:
+- Layer 1 (skill activation): YAML `description` keywords → framework-level string matching → bilingual keywords help matching confidence → **keep bilingual**
+- Layer 2 (mode routing): intent signals in SKILL.md → Claude's semantic reasoning → language-agnostic → **no per-language keyword lists needed**
 
 ---
 
