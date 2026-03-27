@@ -1,6 +1,6 @@
 # Academic Research Skills for Claude Code
 
-[![Version](https://img.shields.io/badge/version-v2.8-blue)](https://github.com/Imbad0202/academic-research-skills/releases/tag/v2.8)
+[![Version](https://img.shields.io/badge/version-v2.9-blue)](https://github.com/Imbad0202/academic-research-skills/releases/tag/v2.9)
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/license-CC%20BY--NC%204.0-lightgrey)](https://creativecommons.org/licenses/by-nc/4.0/)
 [![Sponsor](https://img.shields.io/badge/sponsor-Buy%20Me%20a%20Coffee-orange?logo=buy-me-a-coffee)](https://buymeacoffee.com/crucify020v)
 
@@ -20,7 +20,7 @@
 ## 功能特色
 
 - **Deep Research** — 13 個 Agent 組成的研究團隊，支援蘇格拉底引導（含 SCR 反思機制）+ 系統性文獻回顧 / PRISMA
-- **Academic Paper** — 12 個 Agent 的論文撰寫團隊，含 LaTeX 輸出強化、視覺化、修訂教練、引用格式轉換
+- **Academic Paper** — 12 個 Agent 的論文撰寫團隊，含風格校準、AI 寫作品質檢查、LaTeX 輸出強化、視覺化、修訂教練、引用格式轉換
 - **Academic Paper Reviewer** — 多視角同儕審查，0-100 品質量表（主編 + 3 位動態審查者 + 魔鬼代言人）
 - **Academic Pipeline** — 10 階段全流程調度器，含自適應 checkpoint、宣稱驗證、素材護照
 
@@ -41,6 +41,8 @@
 7. Pipeline 完成後自動產出協作品質評估（6 維度 1-100 分）
 8. 素材護照（Material Passport）支援中途進入流程的來源追蹤
 9. 跨 skill 模式顧問（14 種情境 + 使用者典型）
+10. 風格校準 — 從過去的論文學習作者寫作風格（可選，intake Step 10）
+11. AI 寫作品質檢查 — 偵測 AI 文字常見的高頻詞彙、標點模式、結構問題
 
 ---
 
@@ -454,6 +456,13 @@ https://github.com/Imbad0202/academic-research-skills
 ---
 
 ## 更新紀錄
+
+### v2.9 (2026-03-27) — 風格校準 + AI 寫作品質檢查
+- **風格校準**（academic-paper intake Step 10，可選）：提供 3+ 篇過去論文，pipeline 會學習你的寫作風格 — 句子節奏、詞彙偏好、引用整合方式。寫作時作為軟性指引；學科規範永遠優先。優先級系統：學科規範（硬性）> 期刊慣例（強）> 個人風格（軟性）。見 `shared/style_calibration_protocol.md`
+- **AI 寫作品質檢查**（`academic-paper/references/ai_writing_lint.md`）：寫作品質 checklist，於初稿自我審查時套用。5 大類：AI 高頻詞彙警告（25 個詞）、標點模式控制（em dash ≤3）、開頭廢話偵測、結構模式警告（三項列舉強迫症、均勻段落、同義詞循環）、句子長度變化檢查。這是好寫作規則 — 不是逃避偵測
+- **Style Profile** 透過 academic-pipeline Material Passport 攜帶（`shared/handoff_schemas.md` Schema 10）
+- **deep-research** report compiler 也可選地消費這兩個功能
+- 版本：academic-paper v2.5、deep-research v2.4、academic-pipeline v2.7
 
 ### v2.8 (2026-03-22) — SCR Loop Phase 1：State-Challenge-Reflect 反思機制
 - **Socratic Mentor Agent**（deep-research + academic-paper）：整合 SCR（表態-挑戰-反思）協議

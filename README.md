@@ -1,6 +1,6 @@
 # Academic Research Skills for Claude Code
 
-[![Version](https://img.shields.io/badge/version-v2.8-blue)](https://github.com/Imbad0202/academic-research-skills/releases/tag/v2.8)
+[![Version](https://img.shields.io/badge/version-v2.9-blue)](https://github.com/Imbad0202/academic-research-skills/releases/tag/v2.9)
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/license-CC%20BY--NC%204.0-lightgrey)](https://creativecommons.org/licenses/by-nc/4.0/)
 [![Sponsor](https://img.shields.io/badge/sponsor-Buy%20Me%20a%20Coffee-orange?logo=buy-me-a-coffee)](https://buymeacoffee.com/crucify020v)
 
@@ -20,7 +20,7 @@ A comprehensive suite of Claude Code skills for academic research, covering the 
 ## Features
 
 - **Deep Research** — 13-agent research team with Socratic guided mode + systematic review / PRISMA + SCR Loop
-- **Academic Paper** — 12-agent paper writing with LaTeX output hardening, visualization, revision coaching, and citation conversion
+- **Academic Paper** — 12-agent paper writing with Style Calibration, AI Writing Lint, LaTeX output hardening, visualization, revision coaching, and citation conversion
 - **Academic Paper Reviewer** — Multi-perspective peer review with 0-100 quality rubrics (EIC + 3 dynamic reviewers + Devil's Advocate)
 - **Academic Pipeline** — Full 10-stage pipeline orchestrator with adaptive checkpoints, claim verification, and material passport
 
@@ -42,6 +42,8 @@ Research → Write → Integrity Check → Review (5-person) → Socratic Coachi
 7. Post-pipeline process summary with 6-dimension collaboration quality scoring (1–100)
 8. Material passport for mid-entry provenance tracking
 9. Cross-skill mode advisor (14 scenarios + user archetypes)
+10. Style Calibration — learn the author's writing voice from past papers (optional, intake Step 10)
+11. AI Writing Lint — writing quality checklist catching overused AI-typical patterns
 
 ---
 
@@ -455,6 +457,13 @@ https://github.com/Imbad0202/academic-research-skills
 ---
 
 ## Changelog
+
+### v2.9 (2026-03-27) — Style Calibration + AI Writing Lint
+- **Style Calibration** (academic-paper intake Step 10, optional): Provide 3+ past papers and the pipeline learns your writing voice — sentence rhythm, vocabulary preferences, citation integration style. Applied as a soft guide during drafting; discipline conventions always take priority. Priority system: discipline norms (hard) > journal conventions (strong) > personal style (soft). See `shared/style_calibration_protocol.md`
+- **AI Writing Lint** (`academic-paper/references/ai_writing_lint.md`): Writing quality checklist applied during draft self-review. 5 categories: AI high-frequency term warnings (25 terms), punctuation pattern control (em dash ≤3), throat-clearing opener detection, structural pattern warnings (Rule of Three, uniform paragraphs, synonym cycling), and burstiness checks (sentence length variation). These are good writing rules — not detection evasion
+- **Style Profile** carried through academic-pipeline Material Passport (Schema 10 in `shared/handoff_schemas.md`)
+- **deep-research** report compiler also consumes both features optionally
+- Versions: academic-paper v2.5, deep-research v2.4, academic-pipeline v2.7
 
 ### v2.8 (2026-03-22) — SCR Loop Phase 1: State-Challenge-Reflect
 - **Socratic Mentor Agent** (deep-research + academic-paper): SCR (State-Challenge-Reflect) protocol integration

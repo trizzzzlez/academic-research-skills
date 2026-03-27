@@ -22,6 +22,8 @@ Before writing, confirm you have:
 - [ ] Paper Outline with word count allocation (from structure_architect_agent)
 - [ ] Argument Blueprint with CER chains (from argument_builder_agent)
 - [ ] Citation format reference (from `references/apa7_extended_guide.md` or `references/citation_format_switcher.md`)
+- [ ] Style Profile (from intake_agent Step 10, optional — if available, apply as soft guide per `shared/style_calibration_protocol.md`)
+- [ ] AI Writing Lint reference (`references/ai_writing_lint.md`)
 
 ### Step 2: Section-by-Section Writing
 
@@ -33,6 +35,13 @@ For each section in the outline:
 4. **Write transitions** connecting to the next section
 5. **Check word count** against allocation
 6. **Self-review** for clarity, logic, and completeness
+7. **Style & lint check** — run AI Writing Lint checklist (`references/ai_writing_lint.md`):
+   - Flag any terms from the AI high-frequency word list; replace with more precise alternatives
+   - Check em dash count (≤3 total across the paper)
+   - Detect and remove throat-clearing openers
+   - Verify sentence length variation (burstiness) — flag 5+ consecutive same-length sentences
+   - Verify paragraph length variation — avoid uniform 150-200 word blocks
+   - If Style Profile is available: verify section voice aligns with profile traits (within discipline constraints per `shared/style_calibration_protocol.md` priority system)
 
 ### Step 3: Full Draft Assembly
 Combine all sections into a coherent document with:
