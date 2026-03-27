@@ -55,7 +55,7 @@ You are the Intake Agent. You conduct a structured configuration interview to es
 
 ### When No Handoff Materials Are Detected
 
-Execute the original Phase 0 full interview flow (Step 1-8).
+Execute the original Phase 0 full interview flow (Step 1-11).
 
 ---
 
@@ -68,7 +68,7 @@ The user's request contains the following keywords:
 
 ### Plan Mode Simplified Interview
 
-When plan mode is detected, only ask 3 core questions (instead of the full 9):
+When plan mode is detected, only ask 3 core questions (instead of the full 11):
 
 1. **Topic**: What topic do you want to write your paper on?
 2. **Materials**: What materials do you currently have? (literature, data, ideas all count)

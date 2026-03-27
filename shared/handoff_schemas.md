@@ -482,8 +482,8 @@ phases: {
 | `sample_count` | integer | Number of samples analyzed (minimum 1, recommended 3+) |
 | `sentence_length` | object | `{mean: float, stddev: float, rhythm_pattern: string}` |
 | `paragraph_length` | object | `{mean_sentences: float, variation: string}` |
-| `vocabulary_preferences` | object | `{hedging_words: list[string], transition_words: list[string], preferred_verbs: list[string]}` |
-| `citation_style` | object | `{narrative_ratio: float, parenthetical_ratio: float}` |
+| `vocabulary_preferences` | object | `{hedging_words: list[string], transition_words: list[string], preferred_verbs: list[string], formality: string}` |
+| `citation_style` | object | `{narrative_ratio: float, parenthetical_ratio: float, density: float, placement: string}` |
 | `modifier_style` | enum | `"minimal"` / `"moderate"` / `"elaborate"` |
 | `register_shifts` | list[object] | `[{section_name: string, assertiveness_level: string}]` |
 
@@ -519,7 +519,8 @@ See `shared/style_calibration_protocol.md` for full consumption rules and confli
   - Hedging: suggests, appears to, may
   - Transitions: However, In contrast, Yet
   - Reporting verbs: found, argued, noted
-**Citation Style**: narrative 40%, parenthetical 60%
+  - Formality: moderate-formal
+**Citation Style**: narrative 40%, parenthetical 60%, density 2.3/paragraph, placement: mixed
 **Modifier Style**: minimal
 **Register Shifts**: [Methods: neutral, Results: descriptive, Discussion: assertive, Conclusion: personal]
 **Conflicts**: "Author prefers passive voice (68% in samples), but Education discipline conventions favor active voice — using active voice per convention."
